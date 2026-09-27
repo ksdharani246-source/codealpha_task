@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PixelView - Image Gallery</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <i class="fa-solid fa-camera-retro"></i>
+            Pixel<span>View</span>
+        </div>
+
+        <nav id="navMenu">
+            <a href="#home">Home</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#categories">Categories</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <button class="menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="hero-small">WELCOME TO PIXELVIEW</p>
+
+            <h1>
+                Explore the World
+                <span>Through Images</span>
+            </h1>
+
+            <p class="hero-description">
+                Discover beautiful moments, breathtaking landscapes,
+                amazing architecture and unforgettable adventures.
+            </p>
+
+            <a href="#gallery" class="hero-btn">
+                Explore Gallery
+                <i class="fa-solid fa-arrow-down"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= GALLERY SECTION ================= -->
+
+    <section class="gallery-section" id="gallery">
+
+        <div class="section-heading">
+
+            <p>OUR COLLECTION</p>
+
+            <h2>Explore Our Gallery</h2>
+
+            <div class="heading-line"></div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="gallery-tools">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search images..."
+                >
+
+            </div>
+
+            <div class="image-count" id="imageCount">
+                Showing 12 images
+            </div>
+
+        </div>
+
+
+        <!-- FILTERS -->
+
+        <div class="filters" id="categories">
+
+            <button class="filter-btn active" data-category="All">
+                All
+            </button>
+
+            <button class="filter-btn" data-category="Nature">
+                Nature
+            </button>
+
+            <button class="filter-btn" data-category="Animals">
+                Animals
+            </button>
+
+            <button class="filter-btn" data-category="Architecture">
+                Architecture
+            </button>
+
+            <button class="filter-btn" data-category="Travel">
+                Travel
+            </button>
+
+            <button class="filter-btn" data-category="People">
+                People
+            </button>
+
+            <button class="filter-btn" data-category="Favorites">
+                <i class="fa-solid fa-heart"></i>
+                Favorites
+            </button>
+
+        </div>
+
+
+        <!-- IMAGE GRID -->
+
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Images are added using JavaScript -->
+        </div>
+
+        <div class="no-results" id="noResults">
+            <i class="fa-regular fa-face-frown"></i>
+            <h3>No images found</h3>
+            <p>Try another search or category.</p>
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about-section" id="about">
+
+        <div class="about-content">
+
+            <div class="about-text">
+
+                <p class="section-label">ABOUT PIXELVIEW</p>
+
+                <h2>
+                    Every Image Tells
+                    <span>A Story</span>
+                </h2>
+
+                <p>
+                    PixelView is a modern responsive image gallery designed
+                    to showcase beautiful photographs from different
+                    categories around the world.
+                </p>
+
+                <p>
+                    Explore, search, filter and view images through an
+                    interactive lightbox experience.
+                </p>
+
+            </div>
+
+            <div class="about-icon">
+
+                <i class="fa-solid fa-images"></i>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-logo">
+                <i class="fa-solid fa-camera-retro"></i>
+                Pixel<span>View</span>
+            </div>
+
+            <p>
+                A modern responsive image gallery built using
+                HTML, CSS & JavaScript.
+            </p>
+
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#about">About</a>
+            </div>
+
+            <div class="copyright">
+                © 2026 PixelView. Built for CodeAlpha Internship.
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= LIGHTBOX ================= -->
+
+    <div class="lightbox" id="lightbox">
+
+        <button class="lightbox-close" id="closeLightbox">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <button class="lightbox-prev" id="prevBtn">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+
+        <div class="lightbox-content">
+
+            <img id="lightboxImage" src="" alt="">
+
+            <div class="lightbox-info">
+
+                <div>
+                    <h3 id="lightboxTitle"></h3>
+                    <p id="lightboxCategory"></p>
+                </div>
+
+                <div class="lightbox-actions">
+
+                    <button id="lightboxFavorite">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+
+                    <button id="downloadBtn">
+                        <i class="fa-solid fa-download"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <button class="lightbox-next" id="nextBtn">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
